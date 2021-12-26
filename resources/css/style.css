@@ -131,7 +131,7 @@ nav {
     background-color: rgba(25, 25, 28, 0.78);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 20px;
     display: flex;
-    z-index: 10;
+    z-index: 1000;
     transition: all 0.2s ease 0s;
 }
 .nav_bg_adder {
@@ -211,7 +211,7 @@ nav .logo_link {
 @media screen and (max-width: 1024px) {
     nav {
         position: fixed;
-        z-index: 3;
+        /* z-index: 1000; */
     }
     .hamburger {
         display: block;
@@ -848,6 +848,9 @@ nav .logo_link {
 }
 .card .card-body {
     padding: 1.5rem;
+    background: rgb(0, 0, 0);
+    border-radius: 2rem;
+    text-align: left;
 }
 .card form {
     margin: 0px;
@@ -1413,25 +1416,49 @@ nav .logo_link {
     }
 }
 #cyber_news {
-    padding: 21rem 0px 11rem;
-    background: rgb(38, 99, 209);
+    padding: 13rem 0px 5rem;
+    background: rgb(38 99 209 / 30%);
 }
 #cyber_news h1 {
     font-size: 4rem;
 }
+#cyber_news_card {
+    width: 100%;
+    padding: 4rem 0px 6rem;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) center center / cover no-repeat, url("../img/security-gf16713851_1280.jpg");
+}
+#cyber_news_card .top_security_head{
+    z-index: 10;
+}
+#cyber_news_card .top_security_head h1{
+    font-size: 5rem;
+    margin-top: 2rem;
+    padding-bottom: 7rem;
+    z-index: 9;
+}
+#cyber_news_card::before {
+    content: "";
+    position: absolute;
+    top: 33px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(34, 101, 222, 0.42), rgba(38, 99, 209, 0.07));
+    clip-path: circle(30% at 100% 70%);
+}
+#cyber_news_card::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(29, 69, 138, 0.48), rgba(3, 3, 3, 0.75));
+    clip-path: circle(20% at 10% 10%);
+}
 #cyber_news_card .container {
     margin-top: 100px !important;
-}
-#cyber_news_card{
-    padding: 4rem 0 6rem 0;
-}
-#cyber_news_card h3 {
-    color: rgb(158, 158, 158);
-    font-size: calc(20px + 6 * ((100vw - 320px) / 680));
-}
-#cyber_news_card button:focus {
-    outline-width: 0px;
-    box-shadow: none !important;
 }
 #cyber_news_card .down_card {
     margin-top: 7rem;
@@ -1440,10 +1467,15 @@ nav .logo_link {
     width: 100%;
     max-width: 70%;
     box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 10px;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 1rem;
     border-radius: 2rem;
     margin: auto;
-    background: rgb(38, 99, 209) !important;
+    transition: all 0.5s ease 0s;
+    z-index: 1;
+    background: rgba(40, 93, 190, 0.75) !important;
+}
+#cyber_news_card .card:hover {
+    transform: translateY(-20px);
 }
 #cyber_news_card .card-header {
     color: rgb(24, 24, 24);
@@ -1453,49 +1485,49 @@ nav .logo_link {
     font-size: 1.2rem;
 }
 #cyber_news_card .cyber_news_img {
-    width: 180px !important;
+    padding-bottom: 4rem;
+    width: 138px !important;
 }
-#cyber_news .btn-primary {
-    background: rgb(181, 42, 180);
-    letter-spacing: 1px;
-    color: rgb(255, 255, 255) !important;
-    border-radius: 0px !important;
+#cyber_news_card .card .card-body .news_info .feed-item-title a {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    display: inline-block;
+    line-height: 1.8;
 }
-#cyber_news_card .btn-primary:hover {
-    background: rgb(181, 42, 180);
-}
-#cyber_news_card .btn-primary:focus {
-    background: rgb(181, 42, 180) !important;
-}
-#cyber_news_card .btn-success {
-    border: 1px solid rgb(0, 0, 0);
-    padding: 8px 20px !important;
-    border-radius: 20px !important;
-}
-#cyber_news_card .btn-success:hover {
-    background: rgb(9 9 9);
-    color: rgb(255, 255, 255) !important;
-    border-color: rgb(7 7 7) !important;
-}
-#cyber_news_card .btn-success:focus {
-    background: rgb(22 22 24) !important;
-    color: rgb(255, 255, 255) !important;
-}
-#cyber_news_card .btn-success {
-    background: rgb(0, 0, 0) !important;
-}
-#cyber_news_card .inner li {
-    list-style-type: disc !important;
+#cyber_news_card .card .card-body .news_info .feed-item-title a:hover {
+    color: aliceblue;
 }
 #cyber_news_card .fa-times-circle {
     vertical-align: middle !important;
     cursor: pointer !important;
 }
-@media (max-width: 654px) {
+@media screen and (max-width: 992px) {
+    #cyber_news_card .col-lg-6 {
+        margin-bottom: 4rem;
+    }
+    #cyber_news_card .down_card{
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 654px) {
     #cyber_news_card .card {
         width: unset;
     }
 }
+@media screen and (max-width: 768px) {
+    #cyber_news_card .top_security_head h1{
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 576px) {
+    #cyber_news_card{
+        padding: 1rem 0 2rem 0;
+    }
+    #cyber_news_card .top_security_head h1{
+        font-size: 2.7rem;
+    }
+}
+
 #cydog_privacy_section {
     padding: 10rem 0px;
     background: rgb(38, 99, 209);
