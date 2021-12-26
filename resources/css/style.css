@@ -848,7 +848,7 @@ nav .logo_link {
 }
 .card .card-body {
     padding: 1.5rem;
-    background: rgb(0, 0, 0);
+    /* background: rgb(0, 0, 0); */
     border-radius: 2rem;
     text-align: left;
 }
@@ -1480,9 +1480,9 @@ nav .logo_link {
 #cyber_news_card .card-header {
     color: rgb(24, 24, 24);
 }
-#cyber_news_card .card-header h6 {
-    font-weight: 400;
-    font-size: 1.2rem;
+#cyber_news_card .card-header h3 {
+    font-weight: 600;
+    font-size: 2rem;
 }
 #cyber_news_card .cyber_news_img {
     padding-bottom: 4rem;
@@ -1490,9 +1490,14 @@ nav .logo_link {
 }
 #cyber_news_card .card .card-body .news_info .feed-item-title a {
     color: rgb(255, 255, 255);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     display: inline-block;
-    line-height: 1.8;
+    line-height: 1.4;
+    outline: .1px solid #bac2c0;
+    margin: .3rem 0;
+    padding: 0.3rem 1.3rem;
+    background: #000;
+    border-radius: 1rem;
 }
 #cyber_news_card .card .card-body .news_info .feed-item-title a:hover {
     color: aliceblue;
@@ -1525,6 +1530,12 @@ nav .logo_link {
     }
     #cyber_news_card .top_security_head h1{
         font-size: 2.7rem;
+    }
+    #cyber_news_card .card-header h3 {
+        font-size: 1.8rem;
+    }
+    #cyber_news_card .card .card-body .news_info .feed-item-title a{
+        font-size: 1.1rem;
     }
 }
 
